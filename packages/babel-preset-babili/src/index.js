@@ -32,7 +32,7 @@ function preset(_opts = {}) {
 
   // Proxies are options passed to multiple plugins
   const proxies = {
-    keepFnames: ["mangle", "deadcode"]
+    keepFnName: ["mangle", "deadcode"]
   };
 
   const plugins = new OptionsManager(proxies, opts)
@@ -49,7 +49,7 @@ function preset(_opts = {}) {
 
     .addOption("infinity", PLUGINS["minify-infinity"], true)
     .addOption("mangle", PLUGINS["minify-mangle-names"], true)
-    .addOption("numericLiterals", "minify-numeric-literals", true)
+    .addOption("numerics", PLUGINS["minify-numeric-literals"], true)
     .addOption("replace", PLUGINS["minify-replace"], true)
     .addOption("simplify", PLUGINS["minify-simplify"], true)
 

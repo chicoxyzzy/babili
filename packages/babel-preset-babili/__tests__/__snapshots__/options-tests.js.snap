@@ -1,21 +1,22 @@
 exports[`preset-options should handle groups - remove entire group 1`] = `
 Object {
   "input": Object {
-    "unsafe": false
+    "unsafe": false,
   },
   "output": Array [
     "babel-plugin-minify-constant-folding",
     "babel-plugin-minify-dead-code-elimination",
     "babel-plugin-minify-infinity",
     "babel-plugin-minify-mangle-names",
+    "babel-plugin-minify-numeric-literals",
     "babel-plugin-minify-replace",
     "babel-plugin-minify-simplify",
     "babel-plugin-transform-member-expression-literals",
     "babel-plugin-transform-property-literals",
     "babel-plugin-transform-merge-sibling-variables",
     "babel-plugin-transform-minify-booleans",
-    "babel-plugin-transform-undefined-to-void"
-  ]
+    "babel-plugin-transform-undefined-to-void",
+  ],
 }
 `;
 
@@ -24,8 +25,8 @@ Object {
   "input": Object {
     "mangle": false,
     "unsafe": Object {
-      "flip": false
-    }
+      "flip": false,
+    },
   },
   "output": Array [
     "babel-plugin-minify-constant-folding",
@@ -34,29 +35,30 @@ Object {
     "babel-plugin-minify-guarded-expressions",
     "babel-plugin-minify-type-constructors",
     "babel-plugin-minify-infinity",
+    "babel-plugin-minify-numeric-literals",
     "babel-plugin-minify-replace",
     "babel-plugin-minify-simplify",
     "babel-plugin-transform-member-expression-literals",
     "babel-plugin-transform-property-literals",
     "babel-plugin-transform-merge-sibling-variables",
     "babel-plugin-transform-minify-booleans",
-    "babel-plugin-transform-undefined-to-void"
-  ]
+    "babel-plugin-transform-undefined-to-void",
+  ],
 }
 `;
 
 exports[`preset-options should handle options that are delegated to multiple other options 1`] = `
 Object {
   "input": Object {
-    "keepFnames": false
+    "keepFnName": false,
   },
   "output": Array [
     "babel-plugin-minify-constant-folding",
     Array [
       "babel-plugin-minify-dead-code-elimination",
       Object {
-        "keepFnames": false
-      }
+        "keepFnName": false,
+      },
     ],
     "babel-plugin-minify-flip-comparisons",
     "babel-plugin-transform-simplify-comparison-operators",
@@ -66,38 +68,39 @@ Object {
     Array [
       "babel-plugin-minify-mangle-names",
       Object {
-        "keepFnames": false
-      }
+        "keepFnName": false,
+      },
     ],
+    "babel-plugin-minify-numeric-literals",
     "babel-plugin-minify-replace",
     "babel-plugin-minify-simplify",
     "babel-plugin-transform-member-expression-literals",
     "babel-plugin-transform-property-literals",
     "babel-plugin-transform-merge-sibling-variables",
     "babel-plugin-transform-minify-booleans",
-    "babel-plugin-transform-undefined-to-void"
-  ]
+    "babel-plugin-transform-undefined-to-void",
+  ],
 }
 `;
 
 exports[`preset-options should handle options that are delegated to multiple other options 2`] = `
 Object {
   "input": Object {
-    "keepFnames": true,
+    "keepFnName": true,
     "mangle": Object {
       "blacklist": Array [
         "foo",
-        "bar"
-      ]
-    }
+        "bar",
+      ],
+    },
   },
   "output": Array [
     "babel-plugin-minify-constant-folding",
     Array [
       "babel-plugin-minify-dead-code-elimination",
       Object {
-        "keepFnames": true
-      }
+        "keepFnName": true,
+      },
     ],
     "babel-plugin-minify-flip-comparisons",
     "babel-plugin-transform-simplify-comparison-operators",
@@ -109,40 +112,41 @@ Object {
       Object {
         "blacklist": Array [
           "foo",
-          "bar"
+          "bar",
         ],
-        "keepFnames": true
-      }
+        "keepFnName": true,
+      },
     ],
+    "babel-plugin-minify-numeric-literals",
     "babel-plugin-minify-replace",
     "babel-plugin-minify-simplify",
     "babel-plugin-transform-member-expression-literals",
     "babel-plugin-transform-property-literals",
     "babel-plugin-transform-merge-sibling-variables",
     "babel-plugin-transform-minify-booleans",
-    "babel-plugin-transform-undefined-to-void"
-  ]
+    "babel-plugin-transform-undefined-to-void",
+  ],
 }
 `;
 
 exports[`preset-options should handle options that are delegated to multiple other options 3`] = `
 Object {
   "input": Object {
-    "keepFnames": true,
+    "keepFnName": true,
     "mangle": Object {
       "blacklist": Array [
-        "baz"
+        "baz",
       ],
-      "keepFnames": false
-    }
+      "keepFnName": false,
+    },
   },
   "output": Array [
     "babel-plugin-minify-constant-folding",
     Array [
       "babel-plugin-minify-dead-code-elimination",
       Object {
-        "keepFnames": true
-      }
+        "keepFnName": true,
+      },
     ],
     "babel-plugin-minify-flip-comparisons",
     "babel-plugin-transform-simplify-comparison-operators",
@@ -153,19 +157,20 @@ Object {
       "babel-plugin-minify-mangle-names",
       Object {
         "blacklist": Array [
-          "baz"
+          "baz",
         ],
-        "keepFnames": false
-      }
+        "keepFnName": false,
+      },
     ],
+    "babel-plugin-minify-numeric-literals",
     "babel-plugin-minify-replace",
     "babel-plugin-minify-simplify",
     "babel-plugin-transform-member-expression-literals",
     "babel-plugin-transform-property-literals",
     "babel-plugin-transform-merge-sibling-variables",
     "babel-plugin-transform-minify-booleans",
-    "babel-plugin-transform-undefined-to-void"
-  ]
+    "babel-plugin-transform-undefined-to-void",
+  ],
 }
 `;
 
@@ -173,7 +178,7 @@ exports[`preset-options should handle simple options 1`] = `
 Object {
   "input": Object {
     "deadcode": false,
-    "mangle": false
+    "mangle": false,
   },
   "output": Array [
     "babel-plugin-minify-constant-folding",
@@ -182,14 +187,15 @@ Object {
     "babel-plugin-minify-guarded-expressions",
     "babel-plugin-minify-type-constructors",
     "babel-plugin-minify-infinity",
+    "babel-plugin-minify-numeric-literals",
     "babel-plugin-minify-replace",
     "babel-plugin-minify-simplify",
     "babel-plugin-transform-member-expression-literals",
     "babel-plugin-transform-property-literals",
     "babel-plugin-transform-merge-sibling-variables",
     "babel-plugin-transform-minify-booleans",
-    "babel-plugin-transform-undefined-to-void"
-  ]
+    "babel-plugin-transform-undefined-to-void",
+  ],
 }
 `;
 
@@ -199,9 +205,9 @@ Object {
     "mangle": Object {
       "blacklist": Array [
         "foo",
-        "bar"
-      ]
-    }
+        "bar",
+      ],
+    },
   },
   "output": Array [
     "babel-plugin-minify-constant-folding",
@@ -216,18 +222,19 @@ Object {
       Object {
         "blacklist": Array [
           "foo",
-          "bar"
-        ]
-      }
+          "bar",
+        ],
+      },
     ],
+    "babel-plugin-minify-numeric-literals",
     "babel-plugin-minify-replace",
     "babel-plugin-minify-simplify",
     "babel-plugin-transform-member-expression-literals",
     "babel-plugin-transform-property-literals",
     "babel-plugin-transform-merge-sibling-variables",
     "babel-plugin-transform-minify-booleans",
-    "babel-plugin-transform-undefined-to-void"
-  ]
+    "babel-plugin-transform-undefined-to-void",
+  ],
 }
 `;
 
@@ -241,13 +248,14 @@ Array [
   "babel-plugin-minify-type-constructors",
   "babel-plugin-minify-infinity",
   "babel-plugin-minify-mangle-names",
+  "babel-plugin-minify-numeric-literals",
   "babel-plugin-minify-replace",
   "babel-plugin-minify-simplify",
   "babel-plugin-transform-member-expression-literals",
   "babel-plugin-transform-property-literals",
   "babel-plugin-transform-merge-sibling-variables",
   "babel-plugin-transform-minify-booleans",
-  "babel-plugin-transform-undefined-to-void"
+  "babel-plugin-transform-undefined-to-void",
 ]
 `;
 
@@ -261,13 +269,14 @@ Array [
   "babel-plugin-minify-type-constructors",
   "babel-plugin-minify-infinity",
   "babel-plugin-minify-mangle-names",
+  "babel-plugin-minify-numeric-literals",
   "babel-plugin-minify-replace",
   "babel-plugin-minify-simplify",
   "babel-plugin-transform-member-expression-literals",
   "babel-plugin-transform-property-literals",
   "babel-plugin-transform-merge-sibling-variables",
   "babel-plugin-transform-minify-booleans",
-  "babel-plugin-transform-undefined-to-void"
+  "babel-plugin-transform-undefined-to-void",
 ]
 `;
 
@@ -281,12 +290,13 @@ Array [
   "babel-plugin-minify-type-constructors",
   "babel-plugin-minify-infinity",
   "babel-plugin-minify-mangle-names",
+  "babel-plugin-minify-numeric-literals",
   "babel-plugin-minify-replace",
   "babel-plugin-minify-simplify",
   "babel-plugin-transform-member-expression-literals",
   "babel-plugin-transform-property-literals",
   "babel-plugin-transform-merge-sibling-variables",
   "babel-plugin-transform-minify-booleans",
-  "babel-plugin-transform-undefined-to-void"
+  "babel-plugin-transform-undefined-to-void",
 ]
 `;

@@ -9,6 +9,7 @@ const mocks = [
   "babel-plugin-minify-type-constructors",
   "babel-plugin-minify-infinity",
   "babel-plugin-minify-mangle-names",
+  "babel-plugin-minify-numeric-literals",
   "babel-plugin-minify-replace",
   "babel-plugin-minify-simplify",
   "babel-plugin-transform-member-expression-literals",
@@ -81,19 +82,19 @@ describe("preset-options", () => {
 
   it("should handle options that are delegated to multiple other options", () => {
     testOpts({
-      keepFnames: false
+      keepFnName: false
     });
     testOpts({
-      keepFnames: true,
+      keepFnName: true,
       mangle: {
         blacklist: ["foo", "bar"]
       }
     });
     testOpts({
-      keepFnames: true,
+      keepFnName: true,
       mangle: {
         blacklist: ["baz"],
-        keepFnames: false
+        keepFnName: false
       }
     });
   });
