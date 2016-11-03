@@ -16,6 +16,7 @@ Object {
     "babel-plugin-transform-merge-sibling-variables",
     "babel-plugin-transform-minify-booleans",
     "babel-plugin-transform-undefined-to-void",
+    "babel-plugin-transform-regexp-constructors",
   ],
 }
 `;
@@ -43,6 +44,7 @@ Object {
     "babel-plugin-transform-merge-sibling-variables",
     "babel-plugin-transform-minify-booleans",
     "babel-plugin-transform-undefined-to-void",
+    "babel-plugin-transform-regexp-constructors",
   ],
 }
 `;
@@ -79,6 +81,7 @@ Object {
     "babel-plugin-transform-merge-sibling-variables",
     "babel-plugin-transform-minify-booleans",
     "babel-plugin-transform-undefined-to-void",
+    "babel-plugin-transform-regexp-constructors",
   ],
 }
 `;
@@ -125,6 +128,7 @@ Object {
     "babel-plugin-transform-merge-sibling-variables",
     "babel-plugin-transform-minify-booleans",
     "babel-plugin-transform-undefined-to-void",
+    "babel-plugin-transform-regexp-constructors",
   ],
 }
 `;
@@ -170,6 +174,7 @@ Object {
     "babel-plugin-transform-merge-sibling-variables",
     "babel-plugin-transform-minify-booleans",
     "babel-plugin-transform-undefined-to-void",
+    "babel-plugin-transform-regexp-constructors",
   ],
 }
 `;
@@ -195,6 +200,7 @@ Object {
     "babel-plugin-transform-merge-sibling-variables",
     "babel-plugin-transform-minify-booleans",
     "babel-plugin-transform-undefined-to-void",
+    "babel-plugin-transform-regexp-constructors",
   ],
 }
 `;
@@ -234,6 +240,7 @@ Object {
     "babel-plugin-transform-merge-sibling-variables",
     "babel-plugin-transform-minify-booleans",
     "babel-plugin-transform-undefined-to-void",
+    "babel-plugin-transform-regexp-constructors",
   ],
 }
 `;
@@ -256,6 +263,7 @@ Array [
   "babel-plugin-transform-merge-sibling-variables",
   "babel-plugin-transform-minify-booleans",
   "babel-plugin-transform-undefined-to-void",
+  "babel-plugin-transform-regexp-constructors",
 ]
 `;
 
@@ -277,6 +285,7 @@ Array [
   "babel-plugin-transform-merge-sibling-variables",
   "babel-plugin-transform-minify-booleans",
   "babel-plugin-transform-undefined-to-void",
+  "babel-plugin-transform-regexp-constructors",
 ]
 `;
 
@@ -298,5 +307,6 @@ Array [
   "babel-plugin-transform-merge-sibling-variables",
   "babel-plugin-transform-minify-booleans",
   "babel-plugin-transform-undefined-to-void",
+  "babel-plugin-transform-regexp-constructors",
 ]
 `;

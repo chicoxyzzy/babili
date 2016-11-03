@@ -17,6 +17,7 @@ const mocks = [
   "babel-plugin-transform-merge-sibling-variables",
   "babel-plugin-transform-minify-booleans",
   "babel-plugin-transform-undefined-to-void",
+  "babel-plugin-transform-regexp-constructors",
   "babel-plugin-transform-remove-debugger",
   "babel-plugin-transform-remove-console"
 ];

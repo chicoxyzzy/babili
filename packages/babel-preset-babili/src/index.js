@@ -21,6 +21,7 @@ const PLUGINS = {
   "transform-merge-sibling-variables":       require("babel-plugin-transform-merge-sibling-variables"),
   "transform-minify-booleans":               require("babel-plugin-transform-minify-booleans"),
   "transform-undefined-to-void":             require("babel-plugin-transform-undefined-to-void"),
+  "transform-regexp-constructors":           require("babel-plugin-transform-regexp-constructors"),
   "transform-remove-debugger":               require("babel-plugin-transform-remove-debugger"),
   "transform-remove-console":                require("babel-plugin-transform-remove-console"),
 };
@@ -63,6 +64,7 @@ function preset(_opts = {}) {
     .addOption("booleans", PLUGINS["transform-minify-booleans"], true)
 
     .addOption("undefinedToVoid", PLUGINS["transform-undefined-to-void"], true)
+    .addOption("regexpConstructors", PLUGINS["transform-regexp-constructors"], true)
     .addOption("removeDebugger", PLUGINS["transform-remove-debugger"], false)
     .addOption("removeConsole", PLUGINS["transform-remove-console"], false)
 
