@@ -1463,7 +1463,7 @@ module.exports = ({ types: t }) => {
     const { node } = path;
 
     const statements = path.container.slice(path.key + 1)
-      .filter(stmt => !t.isFunctionDeclaration(stmt));
+      .filter((stmt) => !t.isFunctionDeclaration(stmt));
 
     if (!statements.length) {
       path.replaceWith(t.expressionStatement(node.test));
