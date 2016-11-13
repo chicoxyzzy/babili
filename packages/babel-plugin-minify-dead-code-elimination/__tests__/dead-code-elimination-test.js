@@ -2218,6 +2218,33 @@ describe("dce-plugin", () => {
     expect(transform(source)).toBe(expected);
   });
 
+  it("should not remove return void 0; statement if inside a loop", () => {
+    const source = unpad(`
+      function foo() {
+        while (a) {
+          if (b) {
+            if (c) return;
+            else return c;
+          } else {
+            bar(a, b, c);
+          }
+        }
+      }
+    `);
+    const expected = unpad(`
+      function foo() {
+        while (a) {
+          if (b) {
+            if (c) return;else return c;
+          } else {
+            bar(a, b, c);
+          }
+        }
+      }
+    `);
+    expect(transform(source)).toBe(expected);
+  });
+
   // https://github.com/babel/babili/issues/265
   it("should integrate with simplify plugin changing scopes", () => {
     const source = unpad(`

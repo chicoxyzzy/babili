@@ -2510,4 +2510,25 @@ describe("simplify-plugin", () => {
     `);
     expect(transform(source)).toBe(expected);
   });
+
+  it("should optimize if..else..returns", () => {
+    const source = unpad(`
+      function foo() {
+        if (a) {
+          if (x) return;
+          else return x;
+        }
+        const b = 1;
+        return "doesn't matter if this is reached or not";
+      }
+    `);
+    const expected = unpad(`
+      function foo() {
+        if (a) return x ? void 0 : x;
+        const b = 1;
+        return "doesn't matter if this is reached or not";
+      }
+    `);
+    expect(transform(source)).toBe(expected);
+  });
 });
