@@ -2218,31 +2218,26 @@ describe("dce-plugin", () => {
     expect(transform(source)).toBe(expected);
   });
 
+  // https://github.com/babel/babili/issues/265
   it("should not remove return void 0; statement if inside a loop", () => {
     const source = unpad(`
-      function foo() {
-        while (a) {
-          if (b) {
-            if (c) return;
-            else return c;
+      function getParentConditionalPath(path) {
+        let parentPath;
+        while (parentPath = path.parentPath) {
+          if (parentPath.isIfStatement() || parentPath.isConditionalExpression()) {
+            if (path.key === "test") {
+              return;
+            } else {
+              return parentPath;
+            }
           } else {
-            bar(a, b, c);
+            path = parentPath;
           }
         }
       }
     `);
-    const expected = unpad(`
-      function foo() {
-        while (a) {
-          if (b) {
-            if (c) return;else return c;
-          } else {
-            bar(a, b, c);
-          }
-        }
-      }
-    `);
-    expect(transform(source)).toBe(expected);
+
+    expect(transform(source)).toBe(source);
   });
 
   // https://github.com/babel/babili/issues/265
