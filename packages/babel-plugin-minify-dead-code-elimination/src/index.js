@@ -371,6 +371,12 @@ module.exports = ({ types: t, traverse }) => {
       let noNext = true;
       let parentPath = path.parentPath;
       while (parentPath && !parentPath.isFunction() && noNext) {
+        // https://github.com/babel/babili/issues/265
+        if (hasLoopParent(parentPath)) {
+          noNext = false;
+          break;
+        }
+
         const nextPath = parentPath.getSibling(parentPath.key + 1);
         if (nextPath.node) {
           if (nextPath.isReturnStatement()) {
@@ -982,5 +988,15 @@ module.exports = ({ types: t, traverse }) => {
       }
     } while (path = path.parentPath);
     return null;
+  }
+
+  function hasLoopParent(path) {
+    let parent = path;
+    do {
+      if (parent.isLoop()) {
+        return true;
+      }
+    } while (parent = parent.parentPath);
+    return false;
   }
 };

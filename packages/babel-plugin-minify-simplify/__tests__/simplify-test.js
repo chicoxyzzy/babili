@@ -573,10 +573,10 @@ describe("simplify-plugin", () => {
       }
       function bar(a) {
         if (!lol) try {
-          doThings();
-        } catch (e) {
-          doOtherThings();
-        }
+            doThings();
+          } catch (e) {
+            doOtherThings();
+          }
       }
       function baz() {
         for (; wow;) if (lol) return;
@@ -2483,5 +2483,31 @@ describe("simplify-plugin", () => {
     const source = unpad("foo[`x`] = foo[`x`] + 1;");
 
     expect(transform(source)).toBe(source);
+  });
+
+  it("should consider hoisted definitions in if_return", () => {
+    const source = unpad(`
+      function foo() {
+        bar();
+        if(x) return;
+        const {a}=b;
+        function bar () {
+          baz();
+          bar();
+        }
+      }
+    `);
+    const expected = unpad(`
+      function foo() {
+        function bar() {
+          baz(), bar();
+        }
+
+        if (bar(), !x) {
+          const { a } = b;
+        }
+      }
+    `);
+    expect(transform(source)).toBe(expected);
   });
 });
